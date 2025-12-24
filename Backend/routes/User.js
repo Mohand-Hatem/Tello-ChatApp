@@ -11,7 +11,7 @@ import { arcjetVerify } from "../middlewares/arcjet.js";
 const router = express.Router();
 
 //just be carefull active this before upload
-// router.use(arcjetVerify);
+router.use(arcjetVerify);
 
 router.post("/signup", signupUser);
 router.post("/login", loginUser);
