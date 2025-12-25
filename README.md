@@ -1,6 +1,6 @@
 # 🚀 Tello – MERN Stack Real-Time Chat Application
 
-Tello is a **full-stack MERN chat application** designed for real-time communication with **secure authentication**, **real-time reactions**, and a **scalable backend architecture**.  
+Tello is a **Full-stack MERN chat application** designed for real-time communication with **secure authentication**, **real-time reactions**, and a **scalable backend architecture**.  
 The project demonstrates modern best practices in **frontend and backend development, state management, and deployment**.
 
 ---
