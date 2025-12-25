@@ -21,7 +21,7 @@ function ChatPage() {
   }, [selectedUser, toggleSpreadChat]);
 
   return (
-    <div className="relative w-full max-w-5xl h-155">
+    <div className="relative w-full min-w-50 max-w-5xl md:h-155 h-165">
       <BorderAnimatedContainer>
         {/* LEFT SIDE */}
 
@@ -76,7 +76,7 @@ function ChatPage() {
         </div>
         {/* RIGHT SIDE */}
         <div
-          className={`flex-1 flex flex-col bg-slate-900/50 backdrop-blur-sm`}
+          className={`min-w-50 flex-1 flex flex-col bg-slate-900/50 backdrop-blur-sm`}
         >
           {selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />}
         </div>
