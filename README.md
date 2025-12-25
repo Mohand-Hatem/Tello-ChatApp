@@ -1,7 +1,7 @@
-# 🚀 Tello – MERN Stack Chat Application
+# 🚀 Tello – MERN Stack Real-Time Chat Application
 
-Tello is a **full-stack MERN chat application** built with modern web technologies.  
-The project focuses on **clean architecture, secure authentication, real-time messaging, and scalable backend design**.
+Tello is a **full-stack MERN chat application** designed for real-time communication with **secure authentication**, **real-time reactions**, and a **scalable backend architecture**.  
+The project demonstrates modern best practices in **frontend and backend development, state management, and deployment**.
 
 ---
 
@@ -9,40 +9,40 @@ The project focuses on **clean architecture, secure authentication, real-time me
 
 ### Frontend
 
-- **React (Vite)**
-- **Tailwind CSS** – UI styling
-- **Zustand** – State management
-- **Axios** – API communication
-- **React Router** – Routing
-- **Framer Motion** – Animations
+- **React (Vite)** – Fast and modern frontend framework
+- **Tailwind CSS** – Utility-first UI styling
+- **Zustand** – Lightweight state management
+- **Axios** – HTTP client for API requests
+- **React Router** – Client-side routing
+- **Framer Motion** – Smooth UI animations
 
 ### Backend
 
-- **Node.js**
-- **Express.js**
-- **MongoDB + Mongoose**
-- **JWT Authentication** (HttpOnly Cookies)
-- **Socket.IO** – Real-time communication
+- **Node.js + Express.js** – RESTful API & server
+- **MongoDB + Mongoose** – Database & ODM
+- **JWT Authentication** (HttpOnly Cookies) – Secure login & session
+- **Socket.IO** – Real-time messaging and reactions
 - **Cloudinary** – Image upload & storage
-- **Resend** – Email service
-- **Arcjet** – Security & rate limiting
+- **Resend** – Email service for verification/onboarding
+- **Arcjet** – Security & rate limiting middleware
 
 ### Database
 
-- **MongoDB Atlas**
+- **MongoDB Atlas** – Cloud database
 
 ---
 
 ## ✨ Features
 
-- 🔐 Secure authentication (JWT + HttpOnly Cookies)
-- 👤 User registration & login
+- 🔐 Secure authentication with JWT & HttpOnly Cookies
+- 👤 User registration and login
 - 💬 Real-time chat using Socket.IO
-- 🖼 Upload profile images with Cloudinary
+- 🎭 Real-time reactions on messages
+- 🖼 Profile image upload with Cloudinary
 - 📧 Email notifications (verification / onboarding)
-- 🛡 Rate limiting & security with Arcjet
-- 📱 Responsive UI (mobile-friendly)
-- ⚡ Optimized API & state management
+- 🛡 Rate limiting and enhanced security with Arcjet
+- 📱 Fully responsive UI (mobile & desktop)
+- ⚡ Optimized API and state management
 
 ---
 
@@ -106,9 +106,9 @@ http://localhost:5173
 
 ### Deployment
 
-- Frontend: Vercel
-- Backend: Node.js Server
-- Database: MongoDB Atlas
+Frontend: Vercel
+Backend: Railway (supports real-time Socket.IO communication)
+Database: MongoDB Atlas
 
 ```bash
 cd Frontend && npm run build
@@ -133,8 +133,9 @@ Frontend/dist
 ## 🧠 What I Learned
 
 - Building scalable MERN applications
+- Implementing real-time chat and reactions using Socket.IO
 - Secure authentication using JWT & cookies
-- Deploying full‑stack apps on Vercel
+- Deploying full-stack apps: Railway backend + Vercel frontend
 - Structuring real‑world projects
 - Handling production‑ready environment variables
 

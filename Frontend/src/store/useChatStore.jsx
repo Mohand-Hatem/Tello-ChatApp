@@ -117,4 +117,38 @@ export const useChatStore = create((set, get) => ({
     const socket = useAuthStore.getState().socket;
     socket?.off("newMessage");
   },
+
+  updateReaction: async (messageId, reaction) => {
+    const { messages } = get();
+    const { socket } = useAuthStore.getState();
+    try {
+      await axiosInstance.put("/message/reaction", {
+        messageId,
+        reaction,
+      });
+
+      socket.emit("updateMessageReaction", { messageId, reaction });
+
+      const updateMessage = messages.map((msg) =>
+        msg._id === messageId ? { ...msg, reaction } : msg
+      );
+      set({ messages: updateMessage });
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Something went wrong");
+    }
+  },
+
+  subscribeToReaction: () => {
+    const { socket } = useAuthStore.getState();
+    socket.on("updatedReaction", ({ messageId, reaction }) => {
+      const updatedMessages = get().messages.map((msg) =>
+        msg._id === messageId ? { ...msg, reaction } : msg
+      );
+      set({ messages: updatedMessages });
+    });
+  },
+  unsubscribeFromReaction: () => {
+    const { socket } = useAuthStore.getState();
+    socket?.off("updatedReaction");
+  },
 }));

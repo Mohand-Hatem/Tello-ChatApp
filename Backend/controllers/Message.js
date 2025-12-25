@@ -110,3 +110,26 @@ export const getCharPartners = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
+export const updateMessageReaction = async (req, res) => {
+  const { reaction, messageId } = req.body;
+  if (!messageId) {
+    return res.status(400).json({ message: "messageId is required" });
+  }
+  try {
+    const message = await Message.findById(messageId);
+    if (!message) {
+      return res.status(404).json({ message: "Message not found." });
+    }
+    message.reaction = reaction === null ? null : reaction;
+
+    await message.save();
+    res.status(200).json({
+      message: "Reaction updated",
+      reaction: message.reaction,
+      messageId: message._id,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
