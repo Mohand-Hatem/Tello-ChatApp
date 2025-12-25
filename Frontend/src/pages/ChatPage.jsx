@@ -37,8 +37,8 @@ function ChatPage() {
         <div className="md:hidden bg-slate-800/50 backdrop-blur-sm flex flex-col items-center mt-5 relative">
           {spreadChat ? (
             <motion.div
-              className="w-75"
-              initial={{ width: "60px" }}
+              // className="w-75"
+              initial={{ width: "45px" }}
               animate={{ width: "300px" }}
               transition={{ duration: 0.5 }}
             >
@@ -57,9 +57,9 @@ function ChatPage() {
             </motion.div>
           ) : (
             <motion.div
-              className="w-15 flex flex-col items-center"
+              className="flex flex-col items-center"
               initial={{ width: "300px" }}
-              animate={{ width: "60px" }}
+              animate={{ width: "40px" }}
               transition={{ duration: 0.5 }}
             >
               <Menu
