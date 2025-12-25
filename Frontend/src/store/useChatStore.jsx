@@ -122,6 +122,11 @@ export const useChatStore = create((set, get) => ({
     const { messages } = get();
     const { socket } = useAuthStore.getState();
     try {
+      const updatedMessagesOptimistic = messages.map((msg) =>
+        msg._id === messageId ? { ...msg, reaction } : msg
+      );
+      set({ messages: updatedMessagesOptimistic });
+
       await axiosInstance.put("/message/reaction", {
         messageId,
         reaction,
