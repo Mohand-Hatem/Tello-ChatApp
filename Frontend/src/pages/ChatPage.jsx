@@ -34,10 +34,13 @@ function ChatPage() {
           </div>
         </div>
 
-        <div className="md:hidden bg-slate-800/50 backdrop-blur-sm flex flex-col items-center mt-5 relative">
+        <div
+          className={`${
+            selectedUser ? "hidden sm:flex " : "md:hidden flex"
+          }md:hidden bg-slate-800/50 backdrop-blur-sm  flex-col items-center mt-5 relative`}
+        >
           {spreadChat ? (
             <motion.div
-              // className="w-75"
               initial={{ width: "45px" }}
               animate={{ width: "300px" }}
               transition={{ duration: 0.5 }}
@@ -73,9 +76,7 @@ function ChatPage() {
         </div>
         {/* RIGHT SIDE */}
         <div
-          className={`flex-1 flex flex-col bg-slate-900/50 backdrop-blur-sm
-  ${spreadChat ? "hidden md:flex" : "flex"}
-`}
+          className={`flex-1 flex flex-col bg-slate-900/50 backdrop-blur-sm`}
         >
           {selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />}
         </div>
