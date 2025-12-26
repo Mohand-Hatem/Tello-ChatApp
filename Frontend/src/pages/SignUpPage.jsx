@@ -24,10 +24,9 @@ function SignUpPage() {
       .trim(),
     password: z
       .string()
-      .min(8, "Password must be at least 8 characters")
       .regex(
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-        "Password must be Strong include (uppercase, number, special character)"
+        "Strong Pass ? (min 8 digit , uppercase, number, special character)"
       ),
   });
   const {
