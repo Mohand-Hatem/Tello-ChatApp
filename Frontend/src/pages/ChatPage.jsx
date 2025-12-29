@@ -21,7 +21,7 @@ function ChatPage() {
   }, [selectedUser, toggleSpreadChat]);
 
   return (
-    <div className="relative w-full min-w-50 max-w-5xl md:h-155 h-165">
+    <div className="relative w-full min-w-50 max-w-5xl h-screen md:h-155">
       <BorderAnimatedContainer>
         {/* LEFT SIDE */}
 
@@ -41,6 +41,7 @@ function ChatPage() {
         >
           {spreadChat ? (
             <motion.div
+              className="flex flex-col flex-1"
               initial={{ width: "45px" }}
               animate={{ width: "300px" }}
               transition={{ duration: 0.5 }}
@@ -54,7 +55,7 @@ function ChatPage() {
               <ProfileHeader />
               <ActiveTabSwitch />
 
-              <div className="flex-1 overflow-y-auto px-4 space-y-2">
+              <div className="flex-1 overflow-y-auto px-4 space-y-2 overscroll-contain">
                 {activeTab === "chats" ? <ChatsList /> : <ContactList />}
               </div>
             </motion.div>
