@@ -18,8 +18,6 @@ dist-ssr/
 **/dist-ssr/
 
 # ================= Env Files =================
-.env
-.env.*
 !.env.example
 
 # ================= Local Config =================
@@ -35,3 +33,4 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+config.bat
