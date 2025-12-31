@@ -21,7 +21,7 @@ function ChatPage() {
   }, [selectedUser, toggleSpreadChat]);
 
   return (
-    <div className="relative w-full min-w-50 max-w-5xl h-screen md:h-155">
+    <div className="relative w-full min-w-50 max-w-5xl h-160 md:h-155">
       <BorderAnimatedContainer>
         {/* LEFT SIDE */}
 
